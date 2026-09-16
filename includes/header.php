@@ -12,10 +12,10 @@ $currentPath = str_replace('\\', '/', $_SERVER['PHP_SELF'] ?? '');
 $navItems = [];
 if ($role === 'STUDENT') {
     $navItems = [
-        ['label' => 'Dashboard', 'href' => '/student/dashboard.php', 'icon' => 'navbar.png'],
-        ['label' => 'Courses', 'href' => '/student/courses.php', 'icon' => 'courseicon.png'],
-        ['label' => 'Assessments', 'href' => '/student/assessments.php', 'icon' => 'courseicon.png'],
-        ['label' => 'Results & feedback', 'href' => '/student/results.php', 'icon' => 'results and feedback.png'],
+        ['label' => 'Dashboard', 'href' => '/student/dashboard.php', 'icon' => 'homeicon.png'],
+        ['label' => 'Courses', 'href' => '/student/courses.php', 'icon' => 'coursesicon.png'],
+        ['label' => 'Assessments', 'href' => '/student/assessments.php', 'icon' => 'assessmenticon.png'],
+        ['label' => 'Results & feedback', 'href' => '/student/results.php', 'icon' => 'resultsandfeedback.png'],
         ['label' => 'View History', 'href' => '/student/progress.php', 'icon' => 'viewhistory.png'],
     ];
 } elseif ($role === 'INSTRUCTOR') {
@@ -53,7 +53,7 @@ if ($role === 'STUDENT') {
         </button>
         <div class="topbar-user">
             <button class="topbar-user-button" type="button" aria-label="Show user menu" aria-expanded="false">
-                <img class="topbar-user-icon" src="<?= e(base_url('/icons/usericon.png')) ?>" alt="">
+                <img class="topbar-user-icon" src="<?= e(base_url('/icons/profileicon.png')) ?>" alt="">
             </button>
             <div class="user-menu">
                 <div class="account-details">
@@ -61,7 +61,9 @@ if ($role === 'STUDENT') {
                     <span class="account-username"><?= e($user['username']) ?></span>
                     <span class="account-role"><?= e(str_replace('_', ' ', $role)) ?></span>
                 </div>
-                <a href="<?= e(base_url('/logout.php')) ?>" class="logout-link">Logout</a>
+                <a href="<?= e(base_url('/logout.php')) ?>" class="logout-link">Logout <br>
+    <!-- <img src="" alt="LOGOUT"> -->
+                </a>
             </div>
         </div>
     </header>

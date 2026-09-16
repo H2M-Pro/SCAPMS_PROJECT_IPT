@@ -1,8 +1,10 @@
 <?php
 
-// If you deploy this app inside a subfolder (e.g. http://localhost/scapms),
-// set BASE_PATH to that subfolder so links/redirects resolve correctly.
-define('BASE_PATH', '');
+// Use the Apache subfolder when running from XAMPP, but keep the PHP
+// development-server URL working from the project root.
+$requestScript = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
+$apacheProjectPath = '/WEB/Project/IPT_PROJECT';
+define('BASE_PATH', strpos($requestScript, $apacheProjectPath . '/') === 0 ? $apacheProjectPath : '');
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -110,7 +112,6 @@ function register_user(array $data): ?array
     if ($stmt->fetch()) {
         return null;
     }
-
     $password = $data['password'] ?? '';
     if ($password === '') {
         return null;

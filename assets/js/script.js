@@ -168,14 +168,23 @@ function renderCourses() {
     return `
       <article class="course-card">
         <div class="course-info">
-          <h2 class="course-title">${course.title}</h2>
-          <div class="instructor">Instructor: ${course.instructor}</div>
-          <div class="progress-label">Progress: ${percent}%</div>
-          <div class="progress-track" aria-label="${percent}% complete">
+          <h2 class="course-title">
+          ${course.title}
+          </h2>
+          <div class="instructor">Instructor:
+           ${course.instructor}
+           </div>
+          <div class="progress-label">Progress: 
+          ${percent}%
+          </div>
+          <div class="progress-track" 
+          aria-label="${percent}% complete">
             <div class="progress-fill" style="width:${percent}%"></div>
           </div>
         </div>
-        <button class="view-details" data-course="${course.id}">View Details</button>
+        <button class="view-details" 
+        data-course="${course.id}">View Details
+        </button>
       </article>
     `;
   }).join("");

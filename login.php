@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <section>
             <h1>SCAPMS</h1>
             <p class="slogan">Learn.Grow.Succeed</p>
-            <h2>Your Future Starts Here</h2>
+            <br>
+            <h2>Your Future  <br>Starts Here</h2>
+            <br>
             <span>Access your courses, assessments and progress reports.</span>
         </section>
     </div>
@@ -55,10 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="username">Username</label>
             <div class="inputsdiv">
                 <input type="text" name="username" id="username" placeholder="Enter your username" value="<?= e($username) ?>" required>
-                <img src="icons/usericon.png" alt="user">
+                <img src="icons/user.png" alt="user">
             </div>
             <br>
-
             <label for="password">Password</label>
             <div class="inputsdiv">
                 <input type="password" name="password" id="password" placeholder="Enter your password" required>
@@ -75,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <br>
             <button type="submit" id="btn">Login</button>
-            <br><br>
+            <br><br> <br>
             <span class="accmsg">Don't have an account? <a href="signup.php">Sign up</a></span>
         </form>
     </div>
